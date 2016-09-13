@@ -127,6 +127,7 @@ char *auto_detect_format(void) {
             if (name) {
                 usleep(50);
                 free(name);
+                name = NULL;
             }
 
             if (!parse_proc_stat(pid, &name, &ppid))
