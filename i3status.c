@@ -266,6 +266,9 @@ static char *get_config_path(void) {
     }
     free(buf);
 
+    if (config_path)
+        free(config_path);
+
     /* 4: check the traditional path under /etc */
     config_path = SYSCONFDIR "/i3status.conf";
     if (path_exists(config_path))
